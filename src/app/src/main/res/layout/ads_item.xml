@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/_5dp"
+    app:cardCornerRadius="@dimen/_20dp">
+
+
+
+<com.huawei.hms.ads.nativead.NativeView
+    android:id="@+id/native_video_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.huawei.hms.ads.nativead.MediaView
+            android:id="@+id/ad_media"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:id="@+id/left_bottom_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ad_media">
+
+            <TextView
+                android:id="@+id/ad_title"
+                android:layout_width="180dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/hiad_text_13_sp" />
+
+            <TextView
+                android:id="@+id/ad_source"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20dp"
+                android:layout_below="@id/ad_title"
+                android:layout_marginStart="@dimen/_20dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="16dp"
+                android:alpha="0.6"
+                android:maxWidth="@dimen/_158dp"
+                android:textColor="@color/greyy"
+                android:textSize="@dimen/hiad_text_12_sp" />
+
+            <TextView
+                android:id="@+id/ad_flag"
+                android:layout_width="@dimen/_20dp"
+                android:layout_height="@dimen/_14dp"
+                android:layout_marginStart="@dimen/_8dp"
+                android:layout_marginTop="@dimen/hiad_40_dp"
+                android:layout_toEndOf="@+id/ad_source"
+                android:background="@drawable/native_flag_rounded_corners_shape"
+                android:gravity="center"
+                android:text="@string/ad_flag"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_8sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/right_bottom_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ad_media"
+            android:layout_alignParentEnd="true">
+
+            <Button
+                android:id="@+id/ad_call_to_action"
+                android:layout_width="@dimen/_72dp"
+                android:layout_height="@dimen/_26dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_23dp"
+                android:layout_marginEnd="@dimen/_52dp"
+                android:layout_marginBottom="@dimen/_23dp"
+                android:background="@drawable/native_button_rounded_corners_shape"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_8sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+</com.huawei.hms.ads.nativead.NativeView>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.huawei.healthkitsampleapp.java.ui.home.HomeViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200dp">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingLeft="@dimen/_20dp"
+                android:paddingRight="@dimen/_20dp"
+                android:paddingTop="@dimen/_20dp"/>
+
+            <LinearLayout
+                android:id="@+id/layout_dot"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_26dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true">
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DogBreedsActivity">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listOfBreeds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:setAdapter="@{model.getAdapter()}"
+            android:layout_margin="8dp"/>
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:id="@+id/spinnerLoading"
+            android:indeterminate="true"
+            android:layout_width="@dimen/hiad_48_dp"
+            android:layout_height="@dimen/hiad_48_dp"
+            android:visibility="@{model.loading}"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="@{model.showEmpty}"
+            android:text="@string/no_breeds_were_returned"/>
+
+    </FrameLayout>
+    </LinearLayout>
+</layout>

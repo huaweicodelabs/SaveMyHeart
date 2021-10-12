@@ -1,0 +1,10 @@
+Software: retrofit
+Copyright 2013 Square, Inc.
+License:Apache License Version 2.0
+
+Software: RxJava
+Copyright (c) 2016-present, RxJava Contributors.
+License:Apache License Version 2.0
+
+
+
